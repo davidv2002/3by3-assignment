@@ -1,59 +1,44 @@
 //Global Variables
-//things
-int boxWidth = 3;
-float pointX;
-float[] xPositions = new float[boxWidth+1];
-int boxHeight = 3;
-float pointY;
-float[] yPositions = new float[boxHeight+1];
 // colors
 color circleRed, white, black;
 // rect
 float rectWidth, rectHeight;
 // points
-float ptDiameter, pt0X, pt1X, pt2X, pt3X, pt0Y, pt1Y, pt2Y, pt3Y;
+float ptDiameter;
+// 2d matrix
+// x cords
+int boxsWide = 3;
+float pointX;
+float[] xPositions = new float[boxsWide+1];
+// y cords
+int boxsTall = 3;
+float pointY;
+float[] yPositions = new float[boxsTall+1];
 
 void setup() {
   size(1024, 768);
+  println("start of console");
   Population();
 }
 
 void draw() {
   // rect
-  // top row
-  rect(pt0X, pt0Y, rectWidth, rectHeight);
-  rect(pt1X, pt0Y, rectWidth, rectHeight);
-  rect(pt2X, pt0Y, rectWidth, rectHeight);
-  // mid row
-  rect(pt0X, pt1Y, rectWidth, rectHeight);
-  rect(pt1X, pt1Y, rectWidth, rectHeight);
-  rect(pt2X, pt1Y, rectWidth, rectHeight);
-  // bottom row
-  rect(pt0X, pt2Y, rectWidth, rectHeight);
-  rect(pt1X, pt2Y, rectWidth, rectHeight);
-  rect(pt2X, pt2Y, rectWidth, rectHeight);
+  for ( int i = 0; i < boxsWide; i++)
+  {
+    for ( int j = 0; j < boxsTall; j++)
+    {
+      rect( xPositions[i], yPositions[j], rectWidth, rectHeight);
+    }
+  }
   // points
   fill(circleRed);
-  // top row
-  ellipse(pt0X, pt0Y, ptDiameter, ptDiameter);
-  ellipse(pt1X, pt0Y, ptDiameter, ptDiameter);
-  ellipse(pt2X, pt0Y, ptDiameter, ptDiameter);
-  ellipse(pt3X, pt0Y, ptDiameter, ptDiameter);
-  // up mid row
-  ellipse(pt0X, pt1Y, ptDiameter, ptDiameter);
-  ellipse(pt1X, pt1Y, ptDiameter, ptDiameter);
-  ellipse(pt2X, pt1Y, ptDiameter, ptDiameter);
-  ellipse(pt3X, pt1Y, ptDiameter, ptDiameter);
-  // down mid row
-  ellipse(pt0X, pt2Y, ptDiameter, ptDiameter);
-  ellipse(pt1X, pt2Y, ptDiameter, ptDiameter);
-  ellipse(pt2X, pt2Y, ptDiameter, ptDiameter);
-  ellipse(pt3X, pt2Y, ptDiameter, ptDiameter);
-  // bottom row
-  ellipse(pt0X, pt3Y, ptDiameter, ptDiameter);
-  ellipse(pt1X, pt3Y, ptDiameter, ptDiameter);
-  ellipse(pt2X, pt3Y, ptDiameter, ptDiameter);
-  ellipse(pt3X, pt3Y, ptDiameter, ptDiameter);
+  for ( int i = 0; i < xPositions.length; i++)
+  {
+    for ( int j = 0; j < yPositions.length; j++)
+    {
+      ellipse( xPositions[i], yPositions[j], ptDiameter, ptDiameter);
+    }
+  }
   // reset color
   fill(white);
 }
