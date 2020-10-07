@@ -1,7 +1,11 @@
 //Global Variables
 //things
-int boxwidth;
-int xPositions[];
+int boxWidth = 3;
+float pointX;
+float[] xPositions = new float[boxWidth+1];
+int boxHeight = 3;
+float pointY;
+float[] yPositions = new float[boxHeight+1];
 // colors
 color circleRed, white, black;
 // rect
