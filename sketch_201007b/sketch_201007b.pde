@@ -7,26 +7,29 @@ float rectWidth, rectHeight;
 float ptDiameter;
 // 2d matrix
 // x cords
-int boxsWide = 3;
+int boxesWide = 3;
 float pointX;
-float[] xPositions = new float[boxsWide+1];
+float[] xPositions = new float[boxesWide+1];
 // y cords
-int boxsTall = 3;
+int boxesTall = 3;
 float pointY;
-float[] yPositions = new float[boxsTall+1];
+float[] yPositions = new float[boxesTall+1];
 
 void setup() {
   size(1024, 768);
+  //fullScreen();
+  frameRate(60);
   println("start of console");
   Population();
 }
 
 void draw() {
   // rect
-  for ( int i = 0; i < boxsWide; i++)
+  for ( int i = 0; i < boxesWide; i++)
   {
-    for ( int j = 0; j < boxsTall; j++)
+    for ( int j = 0; j < boxesTall; j++)
     {
+      println("rect.", "", "x index is",i, "", "y index is", j, "", "x cord is", xPositions[i], "", "y cord is", yPositions[j]);
       rect( xPositions[i], yPositions[j], rectWidth, rectHeight);
     }
   }
@@ -36,6 +39,7 @@ void draw() {
   {
     for ( int j = 0; j < yPositions.length; j++)
     {
+      println("point.", "", "x index is",i, "", "y index is", j, "", "x cord is", xPositions[i], "", "y cord is", yPositions[j]);
       ellipse( xPositions[i], yPositions[j], ptDiameter, ptDiameter);
     }
   }

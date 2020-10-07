@@ -4,23 +4,30 @@ void Population() {
   white=255;
   black=0;
   // rect
-  rectWidth = width*(1.0/boxsWide);
-  rectHeight = height*(1.0/boxsTall);
+  rectWidth = width*(1.0/boxesWide);
+  rectHeight = height*(1.0/boxesTall);
   // points
-  ptDiameter = width * 1 / 27.77777777;
+  if (boxesWide > boxesTall)
+  {
+    ptDiameter = width/(boxesWide*9);
+    println("wide");
+  } else {
+    ptDiameter = width/(boxesTall*9);
+    println("tall");
+  }
   // 2d matrix
   // x cords
   float indexX = 0.0;
   for ( int i = 0; i < xPositions.length; i++) 
   {
-    xPositions[i] = width*(indexX/boxsWide);
+    xPositions[i] = width*(indexX/boxesWide);
     indexX++;
   }
   // y cords
   float indexY = 0.0;
   for ( int i = 0; i < yPositions.length; i++) 
   {
-    yPositions[i] = height*(indexY/boxsTall);
+    yPositions[i] = height*(indexY/boxesTall);
     indexY++;
   }
   println("x Positions");
