@@ -16,7 +16,7 @@ float pointY;
 float[] YPositions = new float[boxesTall+1];
 // z arrays
 color[] Colors = new color[boxesWide*boxesTall];
-int store;
+int storeColor, storeIdex;
 
 void setup() {
   size(1024, 768);
@@ -38,9 +38,9 @@ void draw() {
       fill(white);
     }
   }
-  store =  Colors[2];
+  storeColor =  Colors[2];
   Colors[2] = Colors[3];
-  Colors[3] = store;
+  Colors[3] = storeColor;
   // points
   fill(circleRed);
   for ( int i = 0; i < XPositions.length; i++)
@@ -56,4 +56,14 @@ void draw() {
 }
 
 void mousePressed() {
+   for ( int i = 0; i < boxesWide; i++)
+  {
+    for ( int j = 0; j < boxesTall; j++)
+    {
+      fill( Colors[boxesWide*j+i]);
+      println("rect.", "", "x index is",i, "", "y index is", j, "", "x cord is", XPositions[i], "", "y cord is", YPositions[j]);
+      rect( XPositions[i], YPositions[j], rectWidth, rectHeight);
+      fill(white);
+    }
+  }
 }
