@@ -18,20 +18,31 @@ void Population() {
   // 2d matrix
   // x cords
   float indexX = 0.0;
-  for ( int i = 0; i < xPositions.length; i++) 
+  for ( int i = 0; i < XPositions.length; i++) 
   {
-    xPositions[i] = width*(indexX/boxesWide);
+    XPositions[i] = width*(indexX/boxesWide);
     indexX++;
   }
   // y cords
   float indexY = 0.0;
-  for ( int i = 0; i < yPositions.length; i++) 
+  for ( int i = 0; i < YPositions.length; i++) 
   {
-    yPositions[i] = height*(indexY/boxesTall);
+    YPositions[i] = height*(indexY/boxesTall);
     indexY++;
   }
   println("x Positions");
-  printArray(xPositions);
+  printArray(XPositions);
   println("y Positions");
-  printArray(yPositions);
+  printArray(YPositions);
+
+  // colors
+  for ( int i = 0; i < Colors.length; i++) 
+  {
+    int R = round(random(0, 255));
+    int G = round(random(0, 255));
+    int B = round(random(0, 255));
+    Colors[i] = color(R,G,B);
+  }
+  println("colors");
+  printArray(Colors);
 }
