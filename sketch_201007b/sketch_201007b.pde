@@ -16,6 +16,7 @@ float pointY;
 float[] YPositions = new float[boxesTall+1];
 // z arrays
 color[] Colors = new color[boxesWide*boxesTall];
+int store;
 
 void setup() {
   size(1024, 768);
@@ -37,6 +38,9 @@ void draw() {
       fill(white);
     }
   }
+  store =  Colors[2];
+  Colors[2] = Colors[3];
+  Colors[3] = store;
   // points
   fill(circleRed);
   for ( int i = 0; i < XPositions.length; i++)
