@@ -16,12 +16,13 @@ float pointY;
 float[] YPositions = new float[boxesTall+1];
 // z arrays
 color[] Colors = new color[boxesWide*boxesTall];
-int storeColor, storeIdex;
+int storeColor, storeIndex;
+boolean firstStore;
 
 void setup() {
   size(1024, 768);
   //fullScreen();
-  frameRate(1);
+  frameRate(60);
   println("start of console");
   Population();
 }
@@ -33,21 +34,18 @@ void draw() {
     for ( int j = 0; j < boxesTall; j++)
     {
       fill( Colors[boxesWide*j+i]);
-      println("rect.", "", "x index is",i, "", "y index is", j, "", "x cord is", XPositions[i], "", "y cord is", YPositions[j]);
+      //println("rect.", "", "x index is",i, "", "y index is", j, "", "x cord is", XPositions[i], "", "y cord is", YPositions[j]);
       rect( XPositions[i], YPositions[j], rectWidth, rectHeight);
       fill(white);
     }
   }
-  storeColor =  Colors[2];
-  Colors[2] = Colors[3];
-  Colors[3] = storeColor;
   // points
   fill(circleRed);
   for ( int i = 0; i < XPositions.length; i++)
   {
     for ( int j = 0; j < YPositions.length; j++)
     {
-      println("point.", "", "x index is",i, "", "y index is", j, "", "x cord is", XPositions[i], "", "y cord is", YPositions[j]);
+      //println("point.", "", "x index is",i, "", "y index is", j, "", "x cord is", XPositions[i], "", "y cord is", YPositions[j]);
       ellipse( XPositions[i], YPositions[j], ptDiameter, ptDiameter);
     }
   }
@@ -56,14 +54,35 @@ void draw() {
 }
 
 void mousePressed() {
-   for ( int i = 0; i < boxesWide; i++)
+  if (firstStore == false)
   {
-    for ( int j = 0; j < boxesTall; j++)
+    for ( int i = 0; i < boxesWide; i++)
     {
-      fill( Colors[boxesWide*j+i]);
-      println("rect.", "", "x index is",i, "", "y index is", j, "", "x cord is", XPositions[i], "", "y cord is", YPositions[j]);
-      rect( XPositions[i], YPositions[j], rectWidth, rectHeight);
-      fill(white);
+      for ( int j = 0; j < boxesTall; j++)
+      {
+        if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1])
+        {
+          println(i, j);
+          storeIndex = boxesWide*j+i;
+          println(storeIndex);
+          firstStore = true;
+        }
+      }
+    }
+  } else {
+    for ( int i = 0; i < boxesWide; i++)
+    {
+      for ( int j = 0; j < boxesTall; j++)
+      {
+        if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1])
+        {
+          println(i, j);
+          storeColor =  Colors[storeIndex];
+          Colors[storeIndex] = Colors[boxesWide*j+i];
+          Colors[boxesWide*j+i] = storeColor;
+          firstStore = false;
+        }
+      }
     }
   }
 }
