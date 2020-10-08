@@ -1,8 +1,8 @@
 void Population() {
   // colors
-  circleRed = #FF0303; 
   white=255;
-  black=0;
+  circleRed = #FF0303;
+  colorReset = white;
   // rect
   rectWidth = width*(1.0/boxesWide);
   rectHeight = height*(1.0/boxesTall);
@@ -41,7 +41,7 @@ void Population() {
     int R = round(random(0, 255));
     int G = round(random(0, 255));
     int B = round(random(0, 255));
-    Colors[i] = color(R,G,B);
+    Colors[i] = color(R, G, B);
   }
   println("colors");
   printArray(Colors);
