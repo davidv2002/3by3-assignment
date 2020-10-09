@@ -1,17 +1,14 @@
 //Global Variables
-// control
-int boxesWide = 1920;
-int boxesTall = 1080;
-// box
-float boxWidth, boxHeight;
-// 2d matrix
+// ints
+int boxesWide = 1920, boxesTall = 1080, startFrames = 5, storeColor, storeIndex;
+// floats
+float boxWidth, boxHeight, xIndex = 0.0, yIndex = xIndex;
+// arrays
 float[] XPositions = new float[boxesWide+1];
 float[] YPositions = new float[boxesTall+1];
-// color code
 color[] Colors = new color[boxesWide*boxesTall];
-int storeColor, storeIndex;
-boolean firstStore, redraw;
-int startFrames = 5;
+// flags
+boolean firstStore, redraw = true;
 
 void setup() {
   fullScreen();
@@ -20,24 +17,21 @@ void setup() {
   boxWidth = width/boxesWide;
   boxHeight = height/boxesTall;
   // 2d matrix
-  float index = 0.0;
   for ( int i = 0; i < XPositions.length; i++) 
   {
-    XPositions[i] = width*(index/boxesWide);
-    index++;
+    XPositions[i] = width*(xIndex/boxesWide);
+    xIndex++;
   }
-  index = 0.0;
   for ( int i = 0; i < YPositions.length; i++) 
   {
-    YPositions[i] = height*(index/boxesTall);
-    index++;
+    YPositions[i] = height*(yIndex/boxesTall);
+    yIndex++;
   }
   // colors
   for ( int i = 0; i < Colors.length; i++) 
   {
     Colors[i] = color(random(0, 255), random(0, 255), random(0, 255));
   }
-  redraw = true;
 }
 
 void draw() {
