@@ -1,5 +1,5 @@
 void DrawBase() {
-  for (int i = 0; i < startFrames; i++) {
+  for (int i = 0; i < 3; i++) {
     for ( int j = 0; j < boxesWide; j++)
     {
       for ( int k = 0; k < boxesTall; k++)

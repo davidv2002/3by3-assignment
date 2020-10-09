@@ -1,6 +1,6 @@
 //Global Variables
 // ints
-int boxesWide = 3, boxesTall = 3, startFrames = 5, storeColor, storeIndexX, storeIndexY, currentX, currentY;
+int boxesWide = 3, boxesTall = 3, storeColor, storeIndexX, storeIndexY, currentX, currentY;
 // floats
 float boxWidth, boxHeight;
 // arrays
@@ -8,7 +8,7 @@ float[] XPositions = new float[boxesWide+1];
 float[] YPositions = new float[boxesTall+1];
 color[] Colors = new color[boxesWide*boxesTall];
 // flags
-boolean firstStore;
+boolean firstStored;
 
 void setup() {
   fullScreen();
@@ -21,6 +21,7 @@ void setup() {
 }
 
 void draw() {
+  println(frameRate);
 }
 
 void mousePressed() {
@@ -31,12 +32,12 @@ void mousePressed() {
       {
         if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1])
         {
-          if (firstStore == false) {
-            //storeIndex = boxesWide*j+i;
+          if (firstStored == false) {
+            firstStored = true;
             storeIndexX = i;
             storeIndexY = j;
-            firstStore = true;
           } else {
+            firstStored = false;
             currentX = i;
             currentY = j;
             ColorSwap();
