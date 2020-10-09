@@ -1,4 +1,4 @@
-//Global Variables
+// global variables
 // matrix size controls
 int boxesWide = 3; 
 int boxesTall = 3;
@@ -22,21 +22,27 @@ void setup() {
   boxHeight = height/boxesTall;
   // fill the three arrays, two for the 2d matrix and one for the colors
   // x cords of matrix
-  for ( int i = 0; i < XPositions.length; i++) {
+  for ( int i = 0; i < XPositions.length; i++) 
+  {
     XPositions[i] = width*((i*1.0)/boxesWide);
   }
   // y cords of matrix
-  for ( int i = 0; i < YPositions.length; i++) {
+  for ( int i = 0; i < YPositions.length; i++) 
+  {
     YPositions[i] = height*((i*1.0)/boxesTall);
   }
   // colors
-  for ( int i = 0; i < Colors.length; i++) {
+  for ( int i = 0; i < Colors.length; i++) 
+  {
     Colors[i] = color(random(0, 255), random(0, 255), random(0, 255));
   }
   // draw all the boxes three times
-  for (int i = 0; i < 3; i++) {
-    for ( int j = 0; j < boxesWide; j++) {
-      for ( int k = 0; k < boxesTall; k++) {
+  for (int i = 0; i < 3; i++) 
+  {
+    for ( int j = 0; j < boxesWide; j++) 
+    {
+      for ( int k = 0; k < boxesTall; k++) 
+      {
         fill( Colors[boxesWide*k+j]);
         rect( XPositions[j], YPositions[k], boxWidth, boxHeight);
       }
@@ -49,16 +55,21 @@ void draw() {
 }
 
 void mousePressed() {
-  for ( int i = 0; i < boxesWide; i++) {
-    for ( int j = 0; j < boxesTall; j++) {
-      if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1]) {
-        if (firstStored == false) {
+  for ( int i = 0; i < boxesWide; i++) 
+  {
+    for ( int j = 0; j < boxesTall; j++) 
+    {
+      if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1]) 
+      {
+        if (firstStored == false) 
+        {
           // set flag
           firstStored = true;
           // store indexes
           storedIndexX = i;
           storedIndexY = j;
-        } else {
+        } else 
+        {
           // reset flag
           firstStored = false;
           // swap the color of the two boxes
