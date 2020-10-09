@@ -11,7 +11,7 @@ float[] YPositions = new float[boxesTall+1];
 color[] Colors = new color[boxesWide*boxesTall];
 int storeColor, storeIndex;
 boolean firstStore, redraw;
-int start = 5;
+int startFrames = 5;
 
 void setup() {
   fullScreen();
@@ -51,10 +51,10 @@ void draw() {
         rect( XPositions[i], YPositions[j], boxWidth, boxHeight);
       }
     }
-    if (start == 0) {
+    if (startFrames == 0) {
       redraw = false;
     } else {
-      start--;
+      startFrames--;
     }
   }
   println(frameRate);
