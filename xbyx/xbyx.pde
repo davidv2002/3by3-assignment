@@ -1,6 +1,7 @@
 //Global Variables
-// ints
-int boxesWide = 3, boxesTall = 3;
+// matrix size controls
+int boxesWide = 3; 
+int boxesTall = 3;
 // box size
 float boxWidth, boxHeight;
 // 2d matrix arrays
@@ -11,7 +12,7 @@ color[] Colors = new color[boxesWide*boxesTall];
 // color swap flag
 boolean firstStored;
 // color swap storage ints
-int storedColor, storedIndexX, storedIndexY, currentX, currentY;
+int storedColor, storedIndexX, storedIndexY;
 
 void setup() {
   fullScreen();
@@ -19,37 +20,7 @@ void setup() {
   // width and hight for the boxes
   boxWidth = width/boxesWide;
   boxHeight = height/boxesTall;
-  // fill all the arrays
-  FillArrays();
-  // draw all of the boxes
-  DrawBase();
-}
-
-void draw() {
-  println(frameRate);
-}
-
-void mousePressed() {
-  for ( int i = 0; i < boxesWide; i++) {
-    for ( int j = 0; j < boxesTall; j++) {
-      if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1]) {
-        if (firstStored == false) {
-          firstStored = true;
-          storedIndexX = i;
-          storedIndexY = j;
-        } else {
-          firstStored = false;
-          currentX = i;
-          currentY = j;
-          ColorSwap();
-        }
-      }
-    }
-  }
-}
-
-// fill the three arrays, two for the 2d matrix and one for the colors
-void FillArrays() {
+  // fill the three arrays, two for the 2d matrix and one for the colors
   // x cords of matrix
   for ( int i = 0; i < XPositions.length; i++) {
     XPositions[i] = width*((i*1.0)/boxesWide);
@@ -62,10 +33,7 @@ void FillArrays() {
   for ( int i = 0; i < Colors.length; i++) {
     Colors[i] = color(random(0, 255), random(0, 255), random(0, 255));
   }
-}
-
-// draw all the boxes three times
-void DrawBase() {
+  // draw all the boxes three times
   for (int i = 0; i < 3; i++) {
     for ( int j = 0; j < boxesWide; j++) {
       for ( int k = 0; k < boxesTall; k++) {
@@ -76,16 +44,36 @@ void DrawBase() {
   }
 }
 
-// swap the color of the two boxes
-void ColorSwap() {
-  // swap colors
-  storedColor =  Colors[boxesWide*storedIndexY+storedIndexX];
-  Colors[boxesWide*storedIndexY+storedIndexX] = Colors[boxesWide*currentY+currentX];
-  Colors[boxesWide*currentY+currentX] = storedColor;
-  // redraw first clicked box
-  fill( Colors[boxesWide*storedIndexY+storedIndexX]);
-  rect( XPositions[storedIndexX], YPositions[storedIndexY], boxWidth, boxHeight);
-  // redraw second clicked box
-  fill( Colors[boxesWide*currentY+currentX]);
-  rect( XPositions[currentX], YPositions[currentY], boxWidth, boxHeight);
+void draw() {
+  println(frameRate);
+}
+
+void mousePressed() {
+  for ( int i = 0; i < boxesWide; i++) {
+    for ( int j = 0; j < boxesTall; j++) {
+      if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1]) {
+        if (firstStored == false) {
+          // set flag
+          firstStored = true;
+          // store indexes
+          storedIndexX = i;
+          storedIndexY = j;
+        } else {
+          // reset flag
+          firstStored = false;
+          // swap the color of the two boxes
+          // swap colors
+          storedColor = Colors[boxesWide*storedIndexY+storedIndexX];
+          Colors[boxesWide*storedIndexY+storedIndexX] = Colors[boxesWide*j+i];
+          Colors[boxesWide*j+i] = storedColor;
+          // redraw first clicked box
+          fill( Colors[boxesWide*storedIndexY+storedIndexX]);
+          rect( XPositions[storedIndexX], YPositions[storedIndexY], boxWidth, boxHeight);
+          // redraw second clicked box
+          fill( Colors[boxesWide*j+i]);
+          rect( XPositions[i], YPositions[j], boxWidth, boxHeight);
+        }
+      }
+    }
+  }
 }
