@@ -2,7 +2,7 @@
 // ints
 int boxesWide = 1920, boxesTall = 1080, startFrames = 5, storeColor, storeIndex;
 // floats
-float boxWidth, boxHeight, xIndex = 0.0, yIndex = xIndex;
+float boxWidth, boxHeight;
 // arrays
 float[] XPositions = new float[boxesWide+1];
 float[] YPositions = new float[boxesTall+1];
@@ -19,13 +19,11 @@ void setup() {
   // 2d matrix
   for ( int i = 0; i < XPositions.length; i++) 
   {
-    XPositions[i] = width*(xIndex/boxesWide);
-    xIndex++;
+    XPositions[i] = width*((i*1.0)/boxesWide);
   }
   for ( int i = 0; i < YPositions.length; i++) 
   {
-    YPositions[i] = height*(yIndex/boxesTall);
-    yIndex++;
+    YPositions[i] = height*((i*1.0)/boxesTall);
   }
   // colors
   for ( int i = 0; i < Colors.length; i++) 
