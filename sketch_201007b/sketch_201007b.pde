@@ -53,7 +53,6 @@ void draw() {
 }
 
 void mousePressed() {
-  if (firstStore == false)
   {
     for ( int i = 0; i < boxesWide; i++)
     {
@@ -61,23 +60,16 @@ void mousePressed() {
       {
         if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1])
         {
-          storeIndex = boxesWide*j+i;
-          firstStore = true;
-        }
-      }
-    }
-  } else {
-    for ( int i = 0; i < boxesWide; i++)
-    {
-      for ( int j = 0; j < boxesTall; j++)
-      {
-        if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1])
-        {
-          storeColor =  Colors[storeIndex];
-          Colors[storeIndex] = Colors[boxesWide*j+i];
-          Colors[boxesWide*j+i] = storeColor;
-          firstStore = false;
-          redraw = true;
+          if (firstStore == false) {
+            storeIndex = boxesWide*j+i;
+            firstStore = true;
+          } else {
+            storeColor =  Colors[storeIndex];
+            Colors[storeIndex] = Colors[boxesWide*j+i];
+            Colors[boxesWide*j+i] = storeColor;
+            firstStore = false;
+            redraw = true;
+          }
         }
       }
     }
