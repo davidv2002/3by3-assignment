@@ -1,48 +1,25 @@
 void Population() {
-  // colors
-  white=255;
-  circleRed = #FF0303;
-  colorReset = white;
   // rect
-  rectWidth = width*(1.0/boxesWide);
-  rectHeight = height*(1.0/boxesTall);
-  // points
-  if (boxesWide > boxesTall)
-  {
-    ptDiameter = width/(boxesWide*9);
-    println("wide");
-  } else {
-    ptDiameter = width/(boxesTall*9);
-    println("tall");
-  }
+  rectWidth = width/boxesWide;
+  rectHeight = height/boxesTall;
   // 2d matrix
   // x cords
-  float indexX = 0.0;
+  float index = 0.0;
   for ( int i = 0; i < XPositions.length; i++) 
   {
-    XPositions[i] = width*(indexX/boxesWide);
-    indexX++;
+    XPositions[i] = width*(index/boxesWide);
+    index++;
   }
   // y cords
-  float indexY = 0.0;
+  index = 0.0;
   for ( int i = 0; i < YPositions.length; i++) 
   {
-    YPositions[i] = height*(indexY/boxesTall);
-    indexY++;
+    YPositions[i] = height*(index/boxesTall);
+    index++;
   }
-  println("x Positions");
-  printArray(XPositions);
-  println("y Positions");
-  printArray(YPositions);
-
   // colors
   for ( int i = 0; i < Colors.length; i++) 
   {
-    int R = round(random(0, 255));
-    int G = round(random(0, 255));
-    int B = round(random(0, 255));
-    Colors[i] = color(R, G, B);
+    Colors[i] = color(round(random(0, 255)), round(random(0, 255)), round(random(0, 255)));
   }
-  println("colors");
-  printArray(Colors);
 }
