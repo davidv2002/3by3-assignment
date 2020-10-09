@@ -1,9 +1,13 @@
+// swap the color of the two boxes
 void ColorSwap() {
-  storeColor =  Colors[boxesWide*storeIndexY+storeIndexX];
-  Colors[boxesWide*storeIndexY+storeIndexX] = Colors[boxesWide*currentY+currentX];
-  Colors[boxesWide*currentY+currentX] = storeColor;
-  fill( Colors[boxesWide*storeIndexY+storeIndexX]);
-  rect( XPositions[storeIndexX], YPositions[storeIndexY], boxWidth, boxHeight);
+  // swap colors
+  storedColor =  Colors[boxesWide*storedIndexY+storedIndexX];
+  Colors[boxesWide*storedIndexY+storedIndexX] = Colors[boxesWide*currentY+currentX];
+  Colors[boxesWide*currentY+currentX] = storedColor;
+  // redraw first clicked box
+  fill( Colors[boxesWide*storedIndexY+storedIndexX]);
+  rect( XPositions[storedIndexX], YPositions[storedIndexY], boxWidth, boxHeight);
+  // redraw second clicked box
   fill( Colors[boxesWide*currentY+currentX]);
   rect( XPositions[currentX], YPositions[currentY], boxWidth, boxHeight);
 }
