@@ -49,7 +49,6 @@ void draw() {
       startFrames--;
     }
   }
-  println(frameRate);
 }
 
 void mousePressed() {
