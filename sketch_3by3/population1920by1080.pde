@@ -1,4 +1,4 @@
-void populationXbyX() {
+void population1920by1080() {
   // width and hight for the boxes
   boxWidth = width/boxesWide;
   boxHeight = height/boxesTall;
@@ -15,4 +15,4 @@ void populationXbyX() {
   for ( int i = 0; i < Colors.length; i++) {
     Colors[i] = color(random(0, 255), random(0, 255), random(0, 255));
   }
-}
+} 

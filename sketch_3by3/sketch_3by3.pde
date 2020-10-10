@@ -3,7 +3,7 @@
 float boxWidthHome, boxHeightHome;
 float[] xPositionsHome = new float[4];
 float[] yPositionsHome = new float[4];
-// test
+// 1920 by 1080 variables
 // matrix size controls
 int boxesWide = 1920; 
 int boxesTall = 1080;
@@ -22,18 +22,9 @@ int storedColor, storedIndexX, storedIndexY;
 void setup() {
   fullScreen();
   println("start of console");
-  populationXbyX();
-  boxWidthHome = width/3.0;
-  boxHeightHome = height/3.0;
-  for ( int i = 0; i < 4; i++) {
-    xPositionsHome[i] = width*(i/3.0);
-    yPositionsHome[i] = height*(i/3.0);
-  }
-  for ( int i = 0; i < 3; i++) {
-    for ( int j = 0; j < 3; j++) {
-      rect( xPositionsHome[i], yPositionsHome[j], boxWidthHome, boxHeightHome);
-    }
-  }
+  populationBase();
+  population1920by1080();
+  drawBase();
 }
 
 void draw() {
@@ -43,22 +34,6 @@ void draw() {
 void mousePressed() {
   println("click");
   if (mouseX>xPositionsHome[0] && mouseY>yPositionsHome[0] && mouseX<xPositionsHome[1] && mouseY<yPositionsHome[1]) {
-   // draw all the boxes three times
-    noStroke();
-    for (int i = 0; i < 1; i++) {
-      for ( int j = 0; j < boxesWide; j++) {
-        for ( int k = 0; k < boxesTall; k++) {
-          fill( Colors[boxesWide*k+j]);
-          rect( XPositions[j], YPositions[k], boxWidth, boxHeight);
-        }
-      }
-    }
-    stroke(0);
-    fill(255);
-      for ( int i = 0; i < 3; i++) {
-    for ( int j = 0; j < 3; j++) {
-      rect( xPositionsHome[i], yPositionsHome[j], boxWidthHome, boxHeightHome);
-    }
-  }
+    draw1920by1080();
   }
 }
