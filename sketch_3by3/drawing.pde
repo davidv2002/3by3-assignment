@@ -25,9 +25,26 @@ void draw1920by1080() {
   fill(255);
 }
 // index 4
+void faceNoRaveWell() {
+  faceMagic();
+}
 // index 5
+void faceNoRaveUnwell() {
+  fill(measleColor);
+  unwell();
+  faceMagic();
+}
 // index 6
+void faceRaveWell() {
+  raveColor();
+  faceRave();
+}
 // index 7
+void faceRaveUnwell() {
+  raveColor();
+  unwell();
+  faceRave();
+}
 // index 8
 void drawText() {
   fill(red);

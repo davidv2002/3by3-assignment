@@ -1,4 +1,5 @@
 void population1920by1080() {
+  safety = 3;
   // fill the three arrays, two for the 2d matrix and one for the colors
   // x cords of matrix
   for ( int i = 0; i < XPositionsBig.length; i++) {
@@ -25,7 +26,7 @@ void populationHappyFace() {
   // variables for commonly used ratios
   thickness = height/100;
   // face base variables
-  faceX = width/2;
+  faceX = noseTopX = width/2;
   faceY = height/2;
   faceDiameter = height;
   // common eye variables
@@ -33,31 +34,27 @@ void populationHappyFace() {
   eyeDiameter = height/7;
   pupilDiameter = eyeDiameter/3;
   // left eye variables
-  leftEyeX = width * 6/16;
+  leftEyeX = mouthLeftX = width * 6/16;
   // right eye variables
-  rightEyeX = width * 10/16;
+  rightEyeX = mouthRightX = width * 10/16;
   // nose variables
   // top point variables
-  noseTopX = faceX;
   noseTopY = height * 6/16;
   // bottom point variables
   noseLeftX = width * 7/16;
   noseRightX = width * 9/16;
   noseBottomY = height * 9/16;
   // mouth variables
-  mouthLeftX = leftEyeX;
-  mouthRightX = rightEyeX;
   mouthY = height * 12/16;
   // exit button variables
   exitButtonX = width * 15/16;
   exitButtonWidth = width * 1/16;
   exitButtonHeight = height * 2/14;
   // color variables
-  red = #ED2626;
+  measleColor = red = #ED2626;
   black = 0;
   white = 255;
   exitButtonXColor = #9B5454;
-  measleColor = red;
   // measles variables
   measleXLow = 0 + (width - height)/2;
   measleXHigh = height + (width - height)/2;
@@ -69,23 +66,18 @@ void populationHappyFace() {
   fontSize = width * 1/35;
   font = createFont ("Microsoft Sans Serif", 55);
   // magic variables
-  magicFace = 1.55;
-  magicFaceLeft = (width/2) - (height/magicFace);
-  magicFaceRight = (width/2) + (height/magicFace);
+  magicFaceLeft = (width/2) - (height/1.55);
+  magicFaceRight = (width/2) + (height/1.55);
   // blinking variables
-  blinkCount = 0;
-  blinkFrame = 0;
+  blinkCount = blinkFrame = blinkTime = 0;
   blinkFrameLow = round(frameRate);
   blinkFrameHigh = blinkFrameLow * 3;
   blinkTimeReset = blinkFrameLow/6;
-  blinkTime = blinkTimeReset;
   // closed eye variables
   leftEyeLeftX = leftEyeX - height/15; 
   leftEyeRightX = leftEyeX + height/15; 
   rightEyeLeftX = rightEyeX - height/15; 
   rightEyeRightX = rightEyeX + height/15;
-  // other variables
-  reset = 1;
 }
 void populationOther() {
   pic = loadImage("pic_from_bc.JPG");

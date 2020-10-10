@@ -1,5 +1,4 @@
 // global variables
-int safety = 3;
 // arrays
 float[] xPositionsHome = new float[4];
 float[] yPositionsHome = new float[4];
@@ -10,10 +9,10 @@ color[] ColorsBig = new color[2073600];
 boolean firstStored;
 // all the ints
 int thickness, faceX, faceY, faceDiameter, eyeY, eyeDiameter, pupilDiameter, rightEyeX, leftEyeX, noseTopX, noseTopY, noseLeftX, noseRightX, noseBottomY, mouthLeftX, mouthRightX;
-int mouthY, exitButtonX, exitButtonWidth, exitButtonHeight, measleXLow, measleXHigh, measleDiameterLow, measleDiameterHigh, R, G, B, fontSize, blinkCount, blinkFrame; 
-int blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX, selectFlag, storedColor, storedIndexX, storedIndexY, reset;
+int mouthY, exitButtonX, exitButtonWidth, exitButtonHeight, measleXLow, measleXHigh, measleDiameterLow, measleDiameterHigh, fontSize, blinkCount, blinkFrame, safety; 
+int blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX, selectFlag, storedColor, storedIndexX, storedIndexY;
 // the floats
-float boxWidthHome, boxHeightHome, measleX, measleY, measleDiameter, magicFace, magicFaceLeft, magicFaceRight, imageHeight;
+float boxWidthHome, boxHeightHome, measleX, measleY, measleDiameter, magicFaceLeft, magicFaceRight, imageHeight;
 // the colors
 color red, black, white, exitButtonXColor, measleColor, exitButtonColor, raveColor;
 // text variables
@@ -48,12 +47,16 @@ void draw() {
     draw1920by1080();
   }
   if (selectFlag == 4) {
+    faceNoRaveWell();
   }
   if (selectFlag == 5) {
+    faceNoRaveUnwell();
   }
   if (selectFlag == 6) {
+    faceRaveWell();
   }
   if (selectFlag == 7) {
+    faceRaveUnwell();
   }
   if (selectFlag == 8) {
     drawText();
