@@ -11,37 +11,37 @@ class Mask {
   void magic() {
     fill(black);
     beginShape();
-    vertex(outsideX, zero);
-    vertex(halfWidth, zero);
+    vertex(outsideX, 0);
+    vertex(halfWidth, 0);
     // the magic of the mask
-    bezierVertex(controlPointX, zero, controlPointX, height, halfWidth, height);
+    bezierVertex(controlPointX, 0, controlPointX, height, halfWidth, height);
     vertex(halfWidth, height);
     vertex(outsideX, height);
-    vertex(outsideX, zero);
+    vertex(outsideX, 0);
     endShape();
     // reset color
-    fill(resetColor);
+    fill(white);
   };
   void rave() {
     fill(raveColor);
     beginShape();
-    vertex(outsideX, zero);
-    vertex(halfWidth, zero);
+    vertex(outsideX, 0);
+    vertex(halfWidth, 0);
     // the magic of the mask
-    bezierVertex(controlPointX, zero, controlPointX, height, halfWidth, height);
+    bezierVertex(controlPointX, 0, controlPointX, height, halfWidth, height);
     vertex(halfWidth, height);
     vertex(outsideX, height);
-    vertex(outsideX, zero);
+    vertex(outsideX, 0);
     endShape();
     // reset color
-    fill(resetColor);
+    fill(white);
   };
 }
 // blinking eyes function
 void Eyes () {
-  if (blinkTime == zero) {
+  if (blinkTime == 0) {
     // stop blinking
-    blinkCount = zero;
+    blinkCount = 0;
     blinkTime = blinkTimeReset;
     blinkFrame = round(random(blinkFrameLow, blinkFrameHigh));
     println("new blink frame is", blinkFrame);
@@ -49,15 +49,15 @@ void Eyes () {
     // blinking
     println("blink");
     // to fully cover open eye
-    strokeWeight(two);
+    strokeWeight(2);
     // stroke to block out open eye
     if ( rave == true) {
       // rgb
       fill(raveColor);
       stroke(raveColor);
     } else {
-      fill(resetColor);
-      stroke(resetColor);
+      fill(white);
+      stroke(white);
     };
     // block out open eyes
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
@@ -83,17 +83,17 @@ void Eyes () {
       // rgb
       fill(raveColor);
     } else {
-      fill(resetColor);
+      fill(white);
     }
     ellipse(leftEyeX, eyeY, eyeDiameter, eyeDiameter);
     ellipse(rightEyeX, eyeY, eyeDiameter, eyeDiameter);
-    fill(resetColor);
+    fill(white);
     // pupils
     fill(black);
     ellipse(leftEyeX, eyeY, pupilDiameter, pupilDiameter);
     ellipse(rightEyeX, eyeY, pupilDiameter, pupilDiameter);
     // reset color
-    fill(resetColor);
+    fill(white);
     blinkCount++;
     println(" frame count is", blinkCount);
   };
@@ -102,14 +102,14 @@ void Eyes () {
 void button() {
   noFill();  
   // draw exit button
-  rect(exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight);
+  rect(exitButtonX, 0, exitButtonWidth, exitButtonHeight);
   // reset color
-  fill(resetColor);
+  fill(white);
   // x on button
   fill(exitButtonXColor);
   textAlign(CENTER, CENTER);
   textFont(exitButtonFont, fontSize);
-  text(xForExitButton, exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight);
+  text(xForExitButton, exitButtonX, 0, exitButtonWidth, exitButtonHeight);
   // reset color
-  fill(resetColor);
+  fill(white);
 }
