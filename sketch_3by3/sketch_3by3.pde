@@ -43,7 +43,7 @@ void draw() {
 void mousePressed() {
   println("click");
   if (mouseX>xPositionsHome[0] && mouseY>yPositionsHome[0] && mouseX<xPositionsHome[1] && mouseY<yPositionsHome[1]) {
-    // draw all the boxes three times
+   // draw all the boxes three times
     noStroke();
     for (int i = 0; i < 1; i++) {
       for ( int j = 0; j < boxesWide; j++) {
@@ -53,5 +53,12 @@ void mousePressed() {
         }
       }
     }
+    stroke(0);
+    fill(255);
+      for ( int i = 0; i < 3; i++) {
+    for ( int j = 0; j < 3; j++) {
+      rect( xPositionsHome[i], yPositionsHome[j], boxWidthHome, boxHeightHome);
+    }
+  }
   }
 }
