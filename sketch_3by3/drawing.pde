@@ -16,7 +16,7 @@ void draw1920by1080() {
     for ( int j = 0; j < boxesWide; j++) {
       for ( int k = 0; k < boxesTall; k++) {
         fill( Colors[boxesWide*k+j]);
-        rect( XPositions[j], YPositions[k], boxWidth, boxHeight);
+        rect( XPositions[j], YPositions[k], 1, 1);
       }
     }
   }

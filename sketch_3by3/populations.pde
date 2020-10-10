@@ -1,7 +1,4 @@
 void population1920by1080() {
-  // width and hight for the boxes
-  boxWidth = width/boxesWide;
-  boxHeight = height/boxesTall;
   // fill the three arrays, two for the 2d matrix and one for the colors
   // x cords of matrix
   for ( int i = 0; i < XPositions.length; i++) {

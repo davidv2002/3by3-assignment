@@ -13,13 +13,11 @@ class Mask {
     beginShape();
     vertex(outsideX, 0);
     vertex(width/2, 0);
-    // the magic of the mask
     bezierVertex(controlPointX, 0, controlPointX, height, width/2, height);
     vertex(width/2, height);
     vertex(outsideX, height);
     vertex(outsideX, 0);
     endShape();
-    // reset color
     fill(white);
   };
   void rave() {
@@ -27,13 +25,11 @@ class Mask {
     beginShape();
     vertex(outsideX, 0);
     vertex(width/2, 0);
-    // the magic of the mask
     bezierVertex(controlPointX, 0, controlPointX, height, width/2, height);
     vertex(width/2, height);
     vertex(outsideX, height);
     vertex(outsideX, 0);
     endShape();
-    // reset color
     fill(white);
   };
 }

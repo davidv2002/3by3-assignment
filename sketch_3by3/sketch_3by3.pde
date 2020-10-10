@@ -16,7 +16,7 @@ int noseLeftX, noseRightX, noseBottomY, mouthLeftX, mouthRightX, mouthY, exitBut
 int measleDiameterHigh, R, G, B, fontSize, blinkCount, blinkFrame, blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX;
 int selectFlag, storedColor, storedIndexX, storedIndexY, reset;
 // the floats
-float boxWidthHome, boxHeightHome, boxWidth, boxHeight, measleX, measleY, measleDiameter, magicFace, magicFaceLeft, magicFaceRight;
+float boxWidthHome, boxHeightHome, measleX, measleY, measleDiameter, magicFace, magicFaceLeft, magicFaceRight;
 // the colors
 color red, black, white, exitButtonXColor, measleColor, exitButtonColor, raveColor;
 // text variables
