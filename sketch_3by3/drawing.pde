@@ -7,6 +7,15 @@ void drawBase() {
   }
 }
 // index 1
+void draw3by3() {
+  for ( int i = 0; i < 3; i++) {
+    for ( int j = 0; j < 3; j++) {
+      fill( colorsSmall[3*j+i]);
+      rect( xPositionsSmall[i], yPositionsSmall[j], boxWidthSmall, boxHeightSmall);
+    }
+  }
+  fill(255);
+}
 // index 2
 void draw10by10() {
   for ( int i = 0; i < 10; i++) {

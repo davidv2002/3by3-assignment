@@ -29,7 +29,6 @@ class Mask {
     endShape();
   };
 }
-
 void magicEyes() {
   if (blinkTime == 0) {
     blinkCount = 0;
@@ -86,8 +85,6 @@ void raveEyes() {
     blinkCount++;
   };
 };
-
-
 void faceMagic() {
   Mask maskLeft = new Mask(0, magicFaceLeft);
   Mask maskRight = new Mask(width, magicFaceRight);
@@ -106,6 +103,7 @@ void faceRave() {
   maskLeft.rave();
   maskRight.rave();
   raveEyes();
+  fill(raveColor);
   triangle(noseTopX, noseTopY, noseLeftX, noseBottomY, noseRightX, noseBottomY);
   strokeWeight(thickness);
   stroke(raveColor);
@@ -113,7 +111,6 @@ void faceRave() {
   stroke(black);
   strokeWeight(1);
 };
-
 void button() {
   noFill();  
   rect(exitButtonX, 0, exitButtonWidth, exitButtonHeight);

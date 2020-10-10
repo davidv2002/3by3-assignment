@@ -38,33 +38,43 @@ void mouseIndex() {
     background(black);
   }
 }
-void mouse10by10() {
-  for ( int i = 0; i < 10; i++) 
-  {
-    for ( int j = 0; j < 10; j++) 
-    {
-      if (mouseX>xPositionsMedium[i] && mouseY>yPositionsMedium[j] && mouseX<xPositionsMedium[i+1] && mouseY<yPositionsMedium[j+1]) 
-      {
-        if (firstStored == false) 
-        {
-          // set flag
+void mouse3by3() {
+  for ( int i = 0; i < 3; i++) {
+    for ( int j = 0; j < 3; j++) {
+      if (mouseX>xPositionsSmall[i] && mouseY>yPositionsSmall[j] && mouseX<xPositionsSmall[i+1] && mouseY<yPositionsSmall[j+1]) {
+        if (firstStored == false) {
           firstStored = true;
-          // store indexes
           storedIndexX = i;
           storedIndexY = j;
-        } else 
-        {
-          // reset flag
+        } else {
           firstStored = false;
-          // swap the color of the two boxes
-          // swap colors
+          storedColor = colorsSmall[3*storedIndexY+storedIndexX];
+          colorsSmall[3*storedIndexY+storedIndexX] = colorsSmall[3*j+i];
+          colorsSmall[3*j+i] = storedColor;
+          fill( colorsSmall[3*storedIndexY+storedIndexX]);
+          rect( xPositionsSmall[storedIndexX], yPositionsSmall[storedIndexY], boxWidthSmall, boxHeightSmall);
+          fill( colorsSmall[3*j+i]);
+          rect( xPositionsSmall[i], yPositionsSmall[j], boxWidthSmall, boxHeightSmall);
+        }
+      }
+    }
+  }
+}
+void mouse10by10() {
+  for ( int i = 0; i < 10; i++) {
+    for ( int j = 0; j < 10; j++) {
+      if (mouseX>xPositionsMedium[i] && mouseY>yPositionsMedium[j] && mouseX<xPositionsMedium[i+1] && mouseY<yPositionsMedium[j+1]) {
+        if (firstStored == false) {
+          firstStored = true;
+          storedIndexX = i;
+          storedIndexY = j;
+        } else {
+          firstStored = false;
           storedColor = colorsMedium[10*storedIndexY+storedIndexX];
           colorsMedium[10*storedIndexY+storedIndexX] = colorsMedium[10*j+i];
           colorsMedium[10*j+i] = storedColor;
-          // redraw first clicked box
           fill( colorsMedium[10*storedIndexY+storedIndexX]);
           rect( xPositionsMedium[storedIndexX], yPositionsMedium[storedIndexY], boxWidthMedium, boxHeightMedium);
-          // redraw second clicked box
           fill( colorsMedium[10*j+i]);
           rect( xPositionsMedium[i], yPositionsMedium[j], boxWidthMedium, boxHeightMedium);
         }

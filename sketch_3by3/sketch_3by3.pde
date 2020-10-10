@@ -24,7 +24,6 @@ String xForExitButton, title;
 PFont font;
 PImage pic;
 
-
 void setup() {
   fullScreen();
   println("start of console");
@@ -45,6 +44,7 @@ void draw() {
     drawBase();
   }
   if (selectFlag == 1) {
+    draw3by3();
   }
   if (selectFlag == 2) {
     draw10by10();
@@ -84,7 +84,7 @@ void mousePressed() {
   } else if (selectFlag == 0) {
     mouseIndex();
   } else if (selectFlag == 1) {
-    
+    mouse3by3();
   } else if (selectFlag == 2) {
     mouse10by10();
   }
