@@ -11,7 +11,7 @@ color[] Colors = new color[boxesWide*boxesTall];
 // the booleans
 boolean rave, unwell, firstStored;
 // all the ints
-int offset, halfWidth, halfHeight, thickness, faceX, faceY, faceDiameter, eyeY, eyeDiameter, pupilDiameter, rightEyeX, leftEyeX, noseTopX, noseTopY;
+int thickness, faceX, faceY, faceDiameter, eyeY, eyeDiameter, pupilDiameter, rightEyeX, leftEyeX, noseTopX, noseTopY;
 int noseLeftX, noseRightX, noseBottomY, mouthLeftX, mouthRightX, mouthY, exitButtonX, exitButtonWidth, exitButtonHeight, measleXLow, measleXHigh, measleDiameterLow; 
 int measleDiameterHigh, R, G, B, fontSize, blinkCount, blinkFrame, blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX;
 int selectFlag, storedColor, storedIndexX, storedIndexY, reset;
@@ -45,7 +45,6 @@ void draw() {
   if (selectFlag == 2) {
   }
   if (selectFlag == 3) {
-    safety = 3;
     draw1920by1080();
   }
   if (selectFlag == 4) {
@@ -61,17 +60,17 @@ void draw() {
   if (selectFlag == 9) {
   }
   button();
+  println(frameRate);
 }
 
 void mousePressed() {
-  if (mouseX>exitButtonX && mouseY>0 && mouseX<width && mouseY<exitButtonHeight) {
+  if (mouseX>exitButtonX && mouseX<width && mouseY<exitButtonHeight) {
     if (selectFlag == 0) {
       exit();
     } else {
       selectFlag = 0;
     }
-  }
-  if (selectFlag == 0) {
+  } else if (selectFlag == 0) {
     mouseIndex();
   }
 }

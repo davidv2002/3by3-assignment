@@ -26,13 +26,10 @@ void populationBase() {
 }
 void populationHappyFace() {
   // variables for commonly used ratios
-  offset = (width - height)/2;
-  halfWidth = width/2;
-  halfHeight = height/2;
   thickness = height/100;
   // face base variables
-  faceX = halfWidth;
-  faceY = halfHeight;
+  faceX = width/2;
+  faceY = height/2;
   faceDiameter = height;
   // common eye variables
   eyeY = height * 4/16;
@@ -65,8 +62,8 @@ void populationHappyFace() {
   exitButtonXColor = #9B5454;
   measleColor = red;
   // measles variables
-  measleXLow = 0 + offset;
-  measleXHigh = height + offset;
+  measleXLow = 0 + (width - height)/2;
+  measleXHigh = height + (width - height)/2;
   measleDiameterLow = height * 1/80;
   measleDiameterHigh = height * 1/40;
   // text variables
@@ -76,8 +73,8 @@ void populationHappyFace() {
   exitButtonFont = createFont ("Microsoft Sans Serif", 55);
   // magic variables
   magicFace = 1.55;
-  magicFaceLeft = (halfWidth) - (height/magicFace);
-  magicFaceRight = (halfWidth) + (height/magicFace);
+  magicFaceLeft = (width/2) - (height/magicFace);
+  magicFaceRight = (width/2) + (height/magicFace);
   // blinking variables
   blinkCount = 0;
   blinkFrame = 0;
