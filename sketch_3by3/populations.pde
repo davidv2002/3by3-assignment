@@ -24,7 +24,7 @@ void populationBase() {
     yPositionsHome[i] = height*(i/3.0);
   }
 }
-void populationHappyFaceCommon() {
+void populationHappyFace() {
   //variables for constants
   zero = 0;
   one = 1;

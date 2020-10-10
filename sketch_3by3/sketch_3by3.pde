@@ -6,6 +6,7 @@ float[] yPositionsHome = new float[4];
 int selectFlag;
 // 1920 by 1080 variables
 // matrix size controls
+int safety = 3;
 int boxesWide = 1920; 
 int boxesTall = 1080;
 // box size
@@ -60,7 +61,6 @@ int blinkCount, blinkFrame, blinkFrameLow, blinkFrameHigh, blinkTimeReset, blink
 int leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX;
 // other variables
 int reset;
-
 void setup() {
   fullScreen();
   println("start of console");
@@ -74,7 +74,7 @@ void setup() {
   }
   populationBase();
   population1920by1080();
-  populationHappyFaceCommon();
+  populationHappyFace();
 }
 
 void draw() {
@@ -82,44 +82,38 @@ void draw() {
     drawBase();
   }
   if (selectFlag == 1) {
+  }
+  if (selectFlag == 2) {
+  }
+  if (selectFlag == 3) {
+    safety = 3;
     draw1920by1080();
   }
-  println(frameRate);
-  stroke(black);
-  strokeWeight(reset);
-  // button
-  // button hoverover
-  if (mouseX>exitButtonX && mouseY>exitButtonY && mouseX<width && mouseY<exitButtonHeight) {
-    exitButtonColor = white;
-    fill(exitButtonColor);
-  } else {
-    noFill();
+  if (selectFlag == 4) {
   }
-  // draw exit button
-  rect(exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight);
-  // reset color
-  fill(resetColor);
-  // x on button
-  fill(exitButtonXColor);
-  textAlign(CENTER, CENTER);
-  textFont(exitButtonFont, fontSize);
-
-  text(xForExitButton, exitButtonX, exitButtonY, exitButtonWidth, exitButtonHeight);
-  // reset color
-  stroke(black);
-  fill(resetColor);
-  // end of draw
+  if (selectFlag == 5) {
+  }
+  if (selectFlag == 6) {
+  }
+  if (selectFlag == 7) {
+  }
+  if (selectFlag == 8) {
+  }
+  if (selectFlag == 9) {
+  }
+  button();
+  println(frameRate);
 }
 
 void mousePressed() {
+  if (selectFlag == 0) {
+    mouseIndex();
+  }
   if (mouseX>exitButtonX && mouseY>exitButtonY && mouseX<width && mouseY<exitButtonHeight) {
     if (selectFlag == 0) {
       exit();
     } else {
       selectFlag = 0;
     }
-  }
-  if (mouseX>xPositionsHome[0] && mouseY>yPositionsHome[0] && mouseX<xPositionsHome[1] && mouseY<yPositionsHome[1]) {
-    selectFlag = 1;
   }
 }
