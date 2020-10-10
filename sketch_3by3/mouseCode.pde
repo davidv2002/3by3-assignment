@@ -34,5 +34,6 @@ void mouseIndex() {
   }
   if (mouseX>xPositionsHome[2] && mouseY>yPositionsHome[2] && mouseX<xPositionsHome[3] && mouseY<yPositionsHome[3]) {
     selectFlag = 9;
+    background(black);
   }
 }

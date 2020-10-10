@@ -30,3 +30,6 @@ void draw1920by1080() {
 // index 7
 // index 8
 // index 9
+void drawImage() {
+  image(pic, imageStartWidth, imageStartHeight, imageWidth, imageHeight);
+}

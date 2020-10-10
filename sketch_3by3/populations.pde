@@ -86,4 +86,13 @@ void populationHappyFace() {
   rightEyeRightX = rightEyeX + height/15;
   // other variables
   reset = 1;
-};
+}
+void populationImage() {
+  pic = loadImage("pic_from_bc.JPG");
+  imageWidthRatio = 700.0/700.0;
+  imageHeightRatio = 467.0/700.0;
+  imageStartWidth = width * 0;
+  imageStartHeight = height * 0;
+  imageWidth = width * imageWidthRatio;
+  imageHeight = height * imageHeightRatio;
+}

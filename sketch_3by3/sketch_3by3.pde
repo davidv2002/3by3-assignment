@@ -17,11 +17,14 @@ int measleDiameterHigh, R, G, B, fontSize, blinkCount, blinkFrame, blinkFrameLow
 int selectFlag, storedColor, storedIndexX, storedIndexY, reset;
 // the floats
 float boxWidthHome, boxHeightHome, measleX, measleY, measleDiameter, magicFace, magicFaceLeft, magicFaceRight;
+float imageStartWidth, imageStartHeight, imageWidth, imageHeight,imageWidthRatio, imageHeightRatio;
 // the colors
 color red, black, white, exitButtonXColor, measleColor, exitButtonColor, raveColor;
 // text variables
 String xForExitButton;
 PFont exitButtonFont;
+PImage pic;
+
 
 void setup() {
   fullScreen();
@@ -34,6 +37,7 @@ void setup() {
   populationBase();
   population1920by1080();
   populationHappyFace();
+  populationImage();
 }
 
 void draw() {
@@ -58,6 +62,7 @@ void draw() {
   if (selectFlag == 8) {
   }
   if (selectFlag == 9) {
+    drawImage();
   }
   button();
   println(frameRate);
