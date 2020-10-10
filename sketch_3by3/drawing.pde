@@ -13,10 +13,10 @@ void draw1920by1080() {
   // draw all the boxes three times
   noStroke();
   for ( int i = 0; i < safety; i++) {
-    for ( int j = 0; j < boxesWide; j++) {
-      for ( int k = 0; k < boxesTall; k++) {
-        fill( Colors[boxesWide*k+j]);
-        rect( XPositions[j], YPositions[k], 1, 1);
+    for ( int j = 0; j < 1920; j++) {
+      for ( int k = 0; k < 1080; k++) {
+        fill( ColorsBig[1920*k+j]);
+        rect( XPositionsBig[j], YPositionsBig[k], 1, 1);
       }
     }
   }
@@ -29,7 +29,14 @@ void draw1920by1080() {
 // index 6
 // index 7
 // index 8
+void drawText() {
+  fill(red);
+  textAlign (CENTER, CENTER);
+  textFont(font, 55);
+  text(title, width*1/4, 0, width*1/2, height*1/10);
+  fill(255);
+}
 // index 9
 void drawImage() {
-  image(pic, imageStartWidth, imageStartHeight, imageWidth, imageHeight);
+  image(pic, 0, 0, width, imageHeight);
 }

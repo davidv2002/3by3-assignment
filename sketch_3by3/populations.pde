@@ -1,16 +1,16 @@
 void population1920by1080() {
   // fill the three arrays, two for the 2d matrix and one for the colors
   // x cords of matrix
-  for ( int i = 0; i < XPositions.length; i++) {
-    XPositions[i] = width*((i*1.0)/boxesWide);
+  for ( int i = 0; i < XPositionsBig.length; i++) {
+    XPositionsBig[i] = width*(i/1920.0);
   }
   // y cords of matrix
-  for ( int i = 0; i < YPositions.length; i++) {
-    YPositions[i] = height*((i*1.0)/boxesTall);
+  for ( int i = 0; i < YPositionsBig.length; i++) {
+    YPositionsBig[i] = height*(i/1080.0);
   }
   // colors
-  for ( int i = 0; i < Colors.length; i++) {
-    Colors[i] = color(random(0, 255), random(0, 255), random(0, 255));
+  for ( int i = 0; i < ColorsBig.length; i++) {
+    ColorsBig[i] = color(random(255), random(255), random(255));
   }
 } 
 void populationBase() {
@@ -67,7 +67,7 @@ void populationHappyFace() {
   xForExitButton = "X";
   // font variables
   fontSize = width * 1/35;
-  exitButtonFont = createFont ("Microsoft Sans Serif", 55);
+  font = createFont ("Microsoft Sans Serif", 55);
   // magic variables
   magicFace = 1.55;
   magicFaceLeft = (width/2) - (height/magicFace);
@@ -87,12 +87,8 @@ void populationHappyFace() {
   // other variables
   reset = 1;
 }
-void populationImage() {
+void populationOther() {
   pic = loadImage("pic_from_bc.JPG");
-  imageWidthRatio = 700.0/700.0;
-  imageHeightRatio = 467.0/700.0;
-  imageStartWidth = width * 0;
-  imageStartHeight = height * 0;
-  imageWidth = width * imageWidthRatio;
-  imageHeight = height * imageHeightRatio;
+  imageHeight = height * (467.0/700.0);
+  title = "Wahoo!";
 }

@@ -1,28 +1,24 @@
 // global variables
 int safety = 3;
-int boxesWide = 1920; 
-int boxesTall = 1080;
 // arrays
 float[] xPositionsHome = new float[4];
 float[] yPositionsHome = new float[4];
-float[] XPositions = new float[boxesWide+1];
-float[] YPositions = new float[boxesTall+1];
-color[] Colors = new color[boxesWide*boxesTall];
+float[] XPositionsBig = new float[1921];
+float[] YPositionsBig = new float[1081];
+color[] ColorsBig = new color[2073600];
 // the booleans
-boolean rave, unwell, firstStored;
+boolean firstStored;
 // all the ints
-int thickness, faceX, faceY, faceDiameter, eyeY, eyeDiameter, pupilDiameter, rightEyeX, leftEyeX, noseTopX, noseTopY;
-int noseLeftX, noseRightX, noseBottomY, mouthLeftX, mouthRightX, mouthY, exitButtonX, exitButtonWidth, exitButtonHeight, measleXLow, measleXHigh, measleDiameterLow; 
-int measleDiameterHigh, R, G, B, fontSize, blinkCount, blinkFrame, blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX;
-int selectFlag, storedColor, storedIndexX, storedIndexY, reset;
+int thickness, faceX, faceY, faceDiameter, eyeY, eyeDiameter, pupilDiameter, rightEyeX, leftEyeX, noseTopX, noseTopY, noseLeftX, noseRightX, noseBottomY, mouthLeftX, mouthRightX;
+int mouthY, exitButtonX, exitButtonWidth, exitButtonHeight, measleXLow, measleXHigh, measleDiameterLow, measleDiameterHigh, R, G, B, fontSize, blinkCount, blinkFrame; 
+int blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX, selectFlag, storedColor, storedIndexX, storedIndexY, reset;
 // the floats
-float boxWidthHome, boxHeightHome, measleX, measleY, measleDiameter, magicFace, magicFaceLeft, magicFaceRight;
-float imageStartWidth, imageStartHeight, imageWidth, imageHeight,imageWidthRatio, imageHeightRatio;
+float boxWidthHome, boxHeightHome, measleX, measleY, measleDiameter, magicFace, magicFaceLeft, magicFaceRight, imageHeight;
 // the colors
 color red, black, white, exitButtonXColor, measleColor, exitButtonColor, raveColor;
 // text variables
-String xForExitButton;
-PFont exitButtonFont;
+String xForExitButton, title;
+PFont font;
 PImage pic;
 
 
@@ -37,7 +33,7 @@ void setup() {
   populationBase();
   population1920by1080();
   populationHappyFace();
-  populationImage();
+  populationOther();
 }
 
 void draw() {
@@ -60,6 +56,7 @@ void draw() {
   if (selectFlag == 7) {
   }
   if (selectFlag == 8) {
+    drawText();
   }
   if (selectFlag == 9) {
     drawImage();
