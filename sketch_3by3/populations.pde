@@ -2,24 +2,38 @@ void population1920by1080() {
   safety = 3;
   // fill the three arrays, two for the 2d matrix and one for the colors
   // x cords of matrix
-  for ( int i = 0; i < XPositionsBig.length; i++) {
-    XPositionsBig[i] = width*(i/1920.0);
+  for ( int i = 0; i < xPositionsBig.length; i++) {
+    xPositionsBig[i] = width*(i/1920.0);
   }
   // y cords of matrix
-  for ( int i = 0; i < YPositionsBig.length; i++) {
-    YPositionsBig[i] = height*(i/1080.0);
+  for ( int i = 0; i < yPositionsBig.length; i++) {
+    yPositionsBig[i] = height*(i/1080.0);
   }
   // colors
-  for ( int i = 0; i < ColorsBig.length; i++) {
-    ColorsBig[i] = color(random(255), random(255), random(255));
+  for ( int i = 0; i < colorsBig.length; i++) {
+    colorsBig[i] = color(random(255), random(255), random(255));
   }
 } 
-void populationBase() {
-  boxWidthHome = width/3.0;
-  boxHeightHome = height/3.0;
+void population10by10(){
+  boxWidthMedium = width/10.0;
+  boxHeightMedium = height/10.0;
+  for ( int i = 0; i < 11; i++) {
+    xPositionsMedium[i] = width*(i/10.0);
+    yPositionsMedium[i] = height*(i/10.0);
+  }
+    for ( int i = 0; i < colorsMedium.length; i++) {
+    colorsMedium[i] = color(random(255), random(255), random(255));
+  }
+}
+void populationSmall() {
+  boxWidthSmall = width/3.0;
+  boxHeightSmall = height/3.0;
   for ( int i = 0; i < 4; i++) {
-    xPositionsHome[i] = width*(i/3.0);
-    yPositionsHome[i] = height*(i/3.0);
+    xPositionsSmall[i] = width*(i/3.0);
+    yPositionsSmall[i] = height*(i/3.0);
+  }
+  for ( int i = 0; i < colorsSmall.length; i++) {
+    colorsSmall[i] = color(random(255), random(255), random(255));
   }
 }
 void populationHappyFace() {

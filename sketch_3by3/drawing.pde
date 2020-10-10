@@ -2,12 +2,21 @@
 void drawBase() {
   for ( int i = 0; i < 3; i++) {
     for ( int j = 0; j < 3; j++) {
-      rect( xPositionsHome[i], yPositionsHome[j], boxWidthHome, boxHeightHome);
+      rect( xPositionsSmall[i], yPositionsSmall[j], boxWidthSmall, boxHeightSmall);
     }
   }
 }
 // index 1
 // index 2
+void draw10by10() {
+  for ( int i = 0; i < 10; i++) {
+    for ( int j = 0; j < 10; j++) {
+      fill( colorsMedium[10*j+i]);
+      rect( xPositionsMedium[i], yPositionsMedium[j], boxWidthMedium, boxHeightMedium);
+    }
+  }
+  fill(255);
+}
 // index 3
 void draw1920by1080() {
   // draw all the boxes three times
@@ -15,8 +24,8 @@ void draw1920by1080() {
   for ( int i = 0; i < safety; i++) {
     for ( int j = 0; j < 1920; j++) {
       for ( int k = 0; k < 1080; k++) {
-        fill( ColorsBig[1920*k+j]);
-        rect( XPositionsBig[j], YPositionsBig[k], 1, 1);
+        fill( colorsBig[1920*k+j]);
+        rect( xPositionsBig[j], yPositionsBig[k], 1, 1);
       }
     }
   }

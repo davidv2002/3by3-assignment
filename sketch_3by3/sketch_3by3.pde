@@ -1,10 +1,14 @@
 // global variables
 // arrays
-float[] xPositionsHome = new float[4];
-float[] yPositionsHome = new float[4];
-float[] XPositionsBig = new float[1921];
-float[] YPositionsBig = new float[1081];
-color[] ColorsBig = new color[2073600];
+float[] xPositionsSmall = new float[4];
+float[] yPositionsSmall = new float[4];
+color[] colorsSmall = new color[9];
+float[] xPositionsMedium = new float[11];
+float[] yPositionsMedium = new float[11];
+color[] colorsMedium = new color[100];
+float[] xPositionsBig = new float[1921];
+float[] yPositionsBig = new float[1081];
+color[] colorsBig = new color[2073600];
 // the booleans
 boolean firstStored;
 // all the ints
@@ -12,7 +16,7 @@ int thickness, faceX, faceY, faceDiameter, eyeY, eyeDiameter, pupilDiameter, rig
 int mouthY, exitButtonX, exitButtonWidth, exitButtonHeight, measleXLow, measleXHigh, measleDiameterLow, measleDiameterHigh, fontSize, blinkCount, blinkFrame, safety; 
 int blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, leftEyeRightX, rightEyeLeftX, rightEyeRightX, selectFlag, storedColor, storedIndexX, storedIndexY;
 // the floats
-float boxWidthHome, boxHeightHome, measleX, measleY, measleDiameter, magicFaceLeft, magicFaceRight, imageHeight;
+float boxWidthSmall, boxHeightSmall, boxWidthMedium, boxHeightMedium, measleX, measleY, measleDiameter, magicFaceLeft, magicFaceRight, imageHeight;
 // the colors
 color red, black, white, exitButtonXColor, measleColor, exitButtonColor, raveColor;
 // text variables
@@ -29,7 +33,8 @@ void setup() {
     println("the width is", width, "and the height is", height);
     exit();
   }
-  populationBase();
+  populationSmall();
+  population10by10();
   population1920by1080();
   populationHappyFace();
   populationOther();
@@ -42,6 +47,7 @@ void draw() {
   if (selectFlag == 1) {
   }
   if (selectFlag == 2) {
+    draw10by10();
   }
   if (selectFlag == 3) {
     draw1920by1080();
@@ -77,5 +83,9 @@ void mousePressed() {
     }
   } else if (selectFlag == 0) {
     mouseIndex();
+  } else if (selectFlag == 1) {
+    
+  } else if (selectFlag == 2) {
+    mouse10by10();
   }
 }
