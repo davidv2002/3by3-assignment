@@ -73,5 +73,5 @@ void drawText() {
 }
 // index 9
 void drawImage() {
-  image(pic, 0, 0, width, imageHeight);
+  image(pic, 0, 0, height, imageHeight);
 }
