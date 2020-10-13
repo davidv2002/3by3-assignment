@@ -30,11 +30,10 @@ void setup() {
     println("the width is", width, "and the height is", height);
     exit();
   }
-  populationSmall();
-  population10by10();
-  population1920by1080();
-  populationHappyFace();
-  populationOther();
+  populationArrays();
+  populationInts();
+  populationFloats();
+  populationOthers();
 }
 
 void draw() {
