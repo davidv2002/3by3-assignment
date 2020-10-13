@@ -48,12 +48,12 @@ void mouse3by3() {
           storedIndexY = j;
         } else {
           firstStored = false;
-          storedColor = colorsSmall[3*storedIndexY+storedIndexX];
-          colorsSmall[3*storedIndexY+storedIndexX] = colorsSmall[3*j+i];
-          colorsSmall[3*j+i] = storedColor;
-          fill( colorsSmall[3*storedIndexY+storedIndexX]);
+          storedColor = colors[3*storedIndexY+storedIndexX];
+          colors[3*storedIndexY+storedIndexX] = colors[3*j+i];
+          colors[3*j+i] = storedColor;
+          fill( colors[3*storedIndexY+storedIndexX]);
           rect( xPositionsSmall[storedIndexX], yPositionsSmall[storedIndexY], boxWidthSmall, boxHeightSmall);
-          fill( colorsSmall[3*j+i]);
+          fill( colors[3*j+i]);
           rect( xPositionsSmall[i], yPositionsSmall[j], boxWidthSmall, boxHeightSmall);
         }
       }
@@ -70,12 +70,12 @@ void mouse10by10() {
           storedIndexY = j;
         } else {
           firstStored = false;
-          storedColor = colorsMedium[10*storedIndexY+storedIndexX];
-          colorsMedium[10*storedIndexY+storedIndexX] = colorsMedium[10*j+i];
-          colorsMedium[10*j+i] = storedColor;
-          fill( colorsMedium[10*storedIndexY+storedIndexX]);
+          storedColor = colors[10*storedIndexY+storedIndexX];
+          colors[10*storedIndexY+storedIndexX] = colors[10*j+i];
+          colors[10*j+i] = storedColor;
+          fill( colors[10*storedIndexY+storedIndexX]);
           rect( xPositionsMedium[storedIndexX], yPositionsMedium[storedIndexY], boxWidthMedium, boxHeightMedium);
-          fill( colorsMedium[10*j+i]);
+          fill( colors[10*j+i]);
           rect( xPositionsMedium[i], yPositionsMedium[j], boxWidthMedium, boxHeightMedium);
         }
       }

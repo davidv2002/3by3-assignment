@@ -6,8 +6,8 @@ void population1920by1080() {
   for ( int i = 0; i < yPositionsBig.length; i++) {
     yPositionsBig[i] = height*(i/1080.0);
   }
-  for ( int i = 0; i < colorsBig.length; i++) {
-    colorsBig[i] = color(random(255), random(255), random(255));
+  for ( int i = 0; i < colors.length; i++) {
+    colors[i] = color(random(255), random(255), random(255));
   }
 } 
 void population10by10() {
@@ -17,9 +17,6 @@ void population10by10() {
     xPositionsMedium[i] = width*(i/10.0);
     yPositionsMedium[i] = height*(i/10.0);
   }
-  for ( int i = 0; i < colorsMedium.length; i++) {
-    colorsMedium[i] = color(random(255), random(255), random(255));
-  }
 }
 void populationSmall() {
   boxWidthSmall = width/3.0;
@@ -27,9 +24,6 @@ void populationSmall() {
   for ( int i = 0; i < 4; i++) {
     xPositionsSmall[i] = width*(i/3.0);
     yPositionsSmall[i] = height*(i/3.0);
-  }
-  for ( int i = 0; i < colorsSmall.length; i++) {
-    colorsSmall[i] = color(random(255), random(255), random(255));
   }
 }
 void populationHappyFace() {

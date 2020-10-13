@@ -2,13 +2,11 @@
 // arrays
 float[] xPositionsSmall = new float[4];
 float[] yPositionsSmall = new float[4];
-color[] colorsSmall = new color[9];
 float[] xPositionsMedium = new float[11];
 float[] yPositionsMedium = new float[11];
-color[] colorsMedium = new color[100];
 float[] xPositionsBig = new float[1921];
 float[] yPositionsBig = new float[1081];
-color[] colorsBig = new color[2073600];
+color[] colors = new color[2073600];
 // the booleans
 boolean firstStored;
 // all the ints
@@ -71,7 +69,7 @@ void draw() {
     drawImage();
   }
   button();
-  println(frameRate);
+ //println(frameRate);
 }
 
 void mousePressed() {
