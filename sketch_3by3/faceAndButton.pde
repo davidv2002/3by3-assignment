@@ -4,7 +4,7 @@ class Mask {
   Mask(int inputOutsideX, float inputControlPointX) {
     outsideX = inputOutsideX;
     controlPointX = inputControlPointX;
-  };
+  }
   void magic() {
     fill(black);
     beginShape();
@@ -27,7 +27,7 @@ class Mask {
     vertex(outsideX, height);
     vertex(outsideX, 0);
     endShape();
-  };
+  }
 }
 void magicEyes() {
   if (blinkTime == 0) {
@@ -55,8 +55,8 @@ void magicEyes() {
     ellipse(rightEyeX, eyeY, pupilDiameter, pupilDiameter);
     fill(white);
     blinkCount++;
-  };
-};
+  }
+}
 void raveEyes() {
   if (blinkTime == 0) {
     blinkCount = 0;
@@ -83,8 +83,8 @@ void raveEyes() {
     ellipse(rightEyeX, eyeY, pupilDiameter, pupilDiameter);
     fill(white);
     blinkCount++;
-  };
-};
+  }
+}
 void faceMagic() {
   Mask maskLeft = new Mask(0, magicFaceLeft);
   Mask maskRight = new Mask(width, magicFaceRight);
@@ -96,7 +96,7 @@ void faceMagic() {
   line(mouthLeftX, mouthY, mouthRightX, mouthY);
   stroke(black);
   strokeWeight(1);
-};
+}
 void faceRave() {
   Mask maskLeft = new Mask(0, magicFaceLeft);
   Mask maskRight = new Mask(width, magicFaceRight);
@@ -110,7 +110,7 @@ void faceRave() {
   line(mouthLeftX, mouthY, mouthRightX, mouthY);
   stroke(black);
   strokeWeight(1);
-};
+}
 void button() {
   noFill();  
   rect(exitButtonX, 0, exitButtonWidth, exitButtonHeight);
