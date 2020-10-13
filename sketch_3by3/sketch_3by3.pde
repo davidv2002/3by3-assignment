@@ -16,7 +16,7 @@ int blinkFrameLow, blinkFrameHigh, blinkTimeReset, blinkTime, leftEyeLeftX, left
 // the floats
 float boxWidthSmall, boxHeightSmall, boxWidthMedium, boxHeightMedium, measleX, measleY, measleDiameter, magicFaceLeft, magicFaceRight, imageHeight;
 // the colors
-color red, black, white, exitButtonXColor, measleColor, exitButtonColor, raveColor;
+color red, black, white, exitButtonXColor, exitButtonColor, raveColor;
 // text variables
 String xForExitButton, title;
 PFont font;

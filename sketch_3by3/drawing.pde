@@ -48,7 +48,7 @@ void faceNoRaveWell() {
 }
 // index 5
 void faceNoRaveUnwell() {
-  fill(measleColor);
+  fill(red);
   unwell();
   faceMagic();
 }

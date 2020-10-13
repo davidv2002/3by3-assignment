@@ -60,7 +60,7 @@ void populationFloats() {
   imageHeight = height * (467.0/700.0);
 }
 void populationOthers() {
-  measleColor = red = #ED2626;
+  red = #ED2626;
   black = 0;
   white = 255;
   exitButtonXColor = #9B5454;
