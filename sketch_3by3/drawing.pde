@@ -30,15 +30,15 @@ void draw10by10() {
 void draw1920by1080() {
   // draw all the boxes three times
   noStroke();
-  for ( int i = 0; i < safety; i++) {
+  if (safety > 0) {
     for ( int j = 0; j < 1920; j++) {
       for ( int k = 0; k < 1080; k++) {
         fill( colors[1920*k+j]);
         rect( xPositionsBig[j], yPositionsBig[k], 1, 1);
       }
     }
+    safety--;
   }
-  safety = 0;
   stroke(0);
   fill(255);
 }

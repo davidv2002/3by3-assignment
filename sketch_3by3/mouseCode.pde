@@ -7,6 +7,7 @@ void mouseIndex() {
   }
   if (mouseX>xPositionsSmall[2] && mouseY>yPositionsSmall[0] && mouseX<xPositionsSmall[3] && mouseY<yPositionsSmall[1]) {
     selectFlag = 3;
+    background(white);
     safety = 3;
   }
   if (mouseX>xPositionsSmall[0] && mouseY>yPositionsSmall[1] && mouseX<xPositionsSmall[1] && mouseY<yPositionsSmall[2]) {
