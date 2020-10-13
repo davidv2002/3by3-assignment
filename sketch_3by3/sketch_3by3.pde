@@ -68,7 +68,7 @@ void draw() {
     drawImage();
   }
   button();
- //println(frameRate);
+  //println(frameRate);
 }
 
 void mousePressed() {
