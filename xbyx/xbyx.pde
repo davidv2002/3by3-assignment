@@ -1,7 +1,7 @@
 // global variables
 // matrix size controls
-int boxesWide = 3; 
-int boxesTall = 3;
+int boxesWide = 10; 
+int boxesTall = 10;
 // box size
 float boxWidth, boxHeight;
 // 2d matrix arrays
